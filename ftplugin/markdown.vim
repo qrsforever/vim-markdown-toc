@@ -29,7 +29,10 @@ endif
 let g:GFMHeadingIds = {}
 
 function! s:HeadingLineRegex()
-    return '\v(^.+$\n^\=+$|^.+$\n^\-+$|^#{1,6})'
+    " lidong mod: one space after #
+    " Title1      Title2      ## Title3
+    " ------      ======
+    return '\v(^.+$\n^\=+$|^.+$\n^\-+$|^#{1,6}\ )'
 endfunction
 
 function! s:GetSections(beginRegex, endRegex)
